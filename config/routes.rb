@@ -1,4 +1,5 @@
 Endorseme::Application.routes.draw do
+  match '/' => "page#test"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
