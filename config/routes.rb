@@ -1,5 +1,10 @@
 Endorseme::Application.routes.draw do
-  match '/' => "page#test"
+  root :to => "page#test"
+  
+  #omniauth routes
+  match "/auth/:provider/callback" => "sessions#create"
+  match "/signout" => "sessions#destroy", :as => :signout
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
